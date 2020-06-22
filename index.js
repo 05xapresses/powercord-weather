@@ -11,7 +11,7 @@ module.exports = class TextReact extends Plugin {
             description: 'checks weather',
             usage: '{c} [city/any name location/airport code/domain/area code/GPS coordinates]',
             executor: async args => {
-                const req = await get('https://wttr.in/' + args.join('+')).query('0T', '').query('force-ansi', '1')
+                const req = await get('https://wttr.in/' + encodeURIComponent(args.join(' '))).query('0T', '').query('force-ansi', '1')
                 if (req.statusCode != 200) return { result: 'something went wrong™️' }
                 
                 let result = { result: "```\n" + req.body.toString() + "\n```" }
