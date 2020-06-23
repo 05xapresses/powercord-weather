@@ -6,7 +6,7 @@ module.exports = class TextReact extends Plugin {
     startPlugin() {
 
         powercord.api.commands.registerCommand({
-            aliases: ["kurwapogoda"],
+            aliases: ["kurwapogoda", "jebacpis"],
             command: 'weather',
             description: 'checks weather',
             usage: '{c} [city/any name location/airport code/domain/area code/GPS coordinates]',
