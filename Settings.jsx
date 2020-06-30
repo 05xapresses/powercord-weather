@@ -24,7 +24,7 @@ module.exports = class Settings extends React.PureComponent {
             onChange={ () => this.props.toggleSetting('asciiart') }
             >Display ascii art</SwitchItem>
 
-            { this.props.getSetting('asciiart') ? null : <RadioGroup
+            { this.props.getSetting('asciiart') === false && <RadioGroup
             options={[
                 { name: '☀️ +20°C', value: 1},
                 { name: '☀️ 🌡️+20°C 🌬️↗7km/h', value: 2 },

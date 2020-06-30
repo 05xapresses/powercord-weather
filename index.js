@@ -12,6 +12,7 @@ module.exports = class TextReact extends Plugin {
             render: Settings
         })
 
+        if (this.settings.get("asciiart", null) === null) this.settings.set("asciiart", true)
 
         powercord.api.commands.registerCommand({
             aliases: ["kurwapogoda", "jebacpis"],
@@ -28,7 +29,7 @@ module.exports = class TextReact extends Plugin {
                     location = args.join(" ")
                 }
 
-                if (this.settings.get('asciiart', 'true') == false){
+                if (this.settings.get('asciiart', true) == false){
                     req = await get('https://wttr.in/' + encodeURIComponent(location)).query((this.settings.get('units','m')), '').query('format',(this.settings.get('nonasciidisplay',4))).query('force-ansi', '1')
                 } else {
                     req = await get('https://wttr.in/' + encodeURIComponent(location)).query('0T' + (this.settings.get('units','m')), '').query('force-ansi', '1')
