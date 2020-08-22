@@ -22,7 +22,7 @@ units:
 
 `USCS` (used in US)
 
-and option to show wind speed in m/s
+and an option to show wind speed in m/s
 
 
 display:
