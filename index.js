@@ -22,6 +22,19 @@ module.exports = class Weather extends Plugin {
             executor: async args => {
                 let location
                 let req
+                powercord.api.notices.sendToast('weather-toast', {
+                    header: 'Getting informations', // required
+                    content: "Please be patient, it's getting all the necessary data 👀",
+                    type: 'info',
+                    timeout: 3e3,
+                    buttons: [ {
+                      text: 'Ok', // required
+                      color: 'green',
+                      size: 'medium',
+                      look: 'filled'
+                    } ]
+                  });
+                  
 
                 if (args.join(" ") == ""){
                     location = this.settings.get('location','')
@@ -33,7 +46,7 @@ module.exports = class Weather extends Plugin {
                     req = await get('https://wttr.in/' + encodeURIComponent(location)).query((this.settings.get('units','m')), '').query('format',(this.settings.get('nonasciidisplay',4))).query('force-ansi', '1')
                 } else {
                     req = await get('https://wttr.in/' + encodeURIComponent(location)).query('0T' + (this.settings.get('units','m')), '').query('force-ansi', '1')
-                }
+                } 
 
                 if (req.statusCode != 200) return { result: 'something went wrong™️' }
                 
