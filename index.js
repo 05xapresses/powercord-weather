@@ -3,7 +3,7 @@ const { Plugin } = require('powercord/entities')
 const { get } = require('powercord/http')
 const Settings = require('./Settings')
 
-module.exports = class TextReact extends Plugin {
+module.exports = class Weather extends Plugin {
     startPlugin() {
 
         powercord.api.settings.registerSettings('weather', {
