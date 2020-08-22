@@ -18,9 +18,9 @@ in settings you can choose
 
 units:
 
-`SI` (used everywhere except USA)
+`SI` (used everywhere except US)
 
-`USCS` (used in USA)
+`USCS` (used in US)
 
 and option to show wind speed in m/s
 
@@ -53,4 +53,4 @@ there are 4 options of showing weather without acii art
 `Warsaw: 🌦 🌡️+21°C 🌬️↘24km/h`
 
 
-and thanks to [Juby](https://github.com/Juby210) for help because without him this plugin wouldn't exist ~~because i'm stupid~~
+and thanks to [Juby](https://github.com/Juby210) for help because without him this plugin wouldn't exist ~~because I'm stupid~~
