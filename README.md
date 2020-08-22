@@ -11,7 +11,7 @@ check http://wttr.in/:help for more info
 `.weather [city/any name location/airport code/domain/area code/GPS coordinates]`
 
 
-without any args the plugin will choose location from plugin setting ~~or random location based on od idk what if you don't set anything in settings~~
+without any args the plugin will choose location from plugin setting ~~or random location based on idk what if you don't set anything in settings~~
 
 
 in settings you can choose 
@@ -53,4 +53,4 @@ there are 4 options of showing weather without acii art
 `Warsaw: 🌦 🌡️+21°C 🌬️↘24km/h`
 
 
-and thanks to [Juby](https://github.com/Juby210) for help because without him this plugin wouldn't exist ~~because I'm stupid~~
+and thanks to [Juby](https://github.com/Juby210) for the help because without him this plugin wouldn't exist ~~because I'm stupid~~
