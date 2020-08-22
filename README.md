@@ -11,7 +11,7 @@ check http://wttr.in/:help for more info
 `.weather [city/any name location/airport code/domain/area code/GPS coordinates]`
 
 
-without any args plugin will choose location from plugin setting ~~or random location based on od idk what if you don't set anything in settings~~
+without any args the plugin will choose location from plugin setting ~~or random location based on od idk what if you don't set anything in settings~~
 
 
 in settings you can choose 
