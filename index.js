@@ -15,7 +15,7 @@ module.exports = class Weather extends Plugin {
         if (!this.settings.get("asciiart", null)) this.settings.set("asciiart", true)
 
         powercord.api.commands.registerCommand({
-            aliases: ["kurwapogoda", "jebacpis"],
+            aliases: ["kurwapogoda", "jebacpis", "mesperman"],
             command: 'weather',
             description: 'checks weather',
             usage: '{c} [city/any name location/airport code/domain/area code/GPS coordinates]',
@@ -43,6 +43,7 @@ module.exports = class Weather extends Plugin {
                 if (req.statusCode != 200) return { result: 'something went wrong™️' }
                 
                 let result = { result: `\`\`\`\n${req.body.toString()}\n\`\`\`` }
+		// czadowy result ziom
                 return result
             }
         })
