@@ -12,7 +12,7 @@ module.exports = class Weather extends Plugin {
             render: Settings
         })
 
-        if (this.settings.get("asciiart", null) === null) this.settings.set("asciiart", true)
+        if (!this.settings.get("asciiart", null)) this.settings.set("asciiart", true)
 
         powercord.api.commands.registerCommand({
             aliases: ["kurwapogoda", "jebacpis"],
@@ -30,9 +30,14 @@ module.exports = class Weather extends Plugin {
                 }
 
                 if (!this.settings.get('asciiart', true)){
-                    req = await get('https://wttr.in/' + encodeURIComponent(location)).query((this.settings.get('units','m')), '').query('format',(this.settings.get('nonasciidisplay',4))).query('force-ansi', '1')
+                    req = await get(`https://wttr.in/${encodeURIComponent(location)}`)
+	                    .query(this.settings.get("units", "m"), "")
+	                    .query("format", this.settings.get("nonasciidisplay", 4))
+	                       .query("force-ansi", "1");
                 } else {
-                    req = await get('https://wttr.in/' + encodeURIComponent(location)).query('0T' + (this.settings.get('units','m')), '').query('force-ansi', '1')
+                    req = await get(`https://wttr.in/${encodeURIComponent(location)}`)
+	                    .query("0T" + this.settings.get("units", "m"), "")
+	                    .query("force-ansi", "1");
                 }
 
                 if (req.statusCode != 200) return { result: 'something went wrong™️' }
