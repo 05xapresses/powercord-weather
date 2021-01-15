@@ -1,4 +1,4 @@
-//btw juby is cute
+//btw juby is even cuter <3333
 const { Plugin } = require('powercord/entities')
 const { get } = require('powercord/http')
 const Settings = require('./Settings')
@@ -12,10 +12,10 @@ module.exports = class Weather extends Plugin {
             render: Settings
         })
 
-        if (this.settings.get("asciiart", null) === null) this.settings.set("asciiart", true)
+        if (!this.settings.get("asciiart", null)) this.settings.set("asciiart", true)
 
         powercord.api.commands.registerCommand({
-            aliases: ["kurwapogoda", "jebacpis"],
+            aliases: ["kurwapogoda", "jebacpis", "mesperman"],
             command: 'weather',
             description: 'checks weather',
             usage: '{c} [city/any name location/airport code/domain/area code/GPS coordinates]',
@@ -23,21 +23,27 @@ module.exports = class Weather extends Plugin {
                 let location
                 let req
 
-                if (args.join(" ") == ""){
+                if (!args.join(" ")){
                     location = this.settings.get('location','')
                 } else {
                     location = args.join(" ")
                 }
 
-                if (this.settings.get('asciiart', true) == false){
-                    req = await get('https://wttr.in/' + encodeURIComponent(location)).query((this.settings.get('units','m')), '').query('format',(this.settings.get('nonasciidisplay',4))).query('force-ansi', '1')
+                if (!this.settings.get('asciiart', true)){
+                    req = await get(`https://wttr.in/${encodeURIComponent(location)}`)
+	                    .query(this.settings.get("units", "m"), "")
+	                    .query("format", this.settings.get("nonasciidisplay", 4))
+	                       .query("force-ansi", "1");
                 } else {
-                    req = await get('https://wttr.in/' + encodeURIComponent(location)).query('0T' + (this.settings.get('units','m')), '').query('force-ansi', '1')
+                    req = await get(`https://wttr.in/${encodeURIComponent(location)}`)
+	                    .query("0T" + this.settings.get("units", "m"), "")
+	                    .query("force-ansi", "1");
                 }
 
                 if (req.statusCode != 200) return { result: 'something went wrong™️' }
                 
-                let result = { result: "```\n" + req.body.toString() + "\n```" }
+                let result = { result: `\`\`\`\n${req.body.toString()}\n\`\`\`` }
+		// czadowy result ziom
                 return result
             }
         })
