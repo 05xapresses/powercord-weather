@@ -1,7 +1,7 @@
 # powercord-weather
 > A powercord plugin for checking the weather ~~because that's what everyone wants in Discord /s~~.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-by-codebabes.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
 ##### Please check out [wttr.in](https://wttr.in/:help) for more info.
